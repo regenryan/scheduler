@@ -1,0 +1,466 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-primary-bg: #334155;
+  --theme-primary-hover-bg: #1e293b;
+  --theme-primary-focus-ring: #94a3b8;
+  --theme-primary-text: #f1f5f9;
+
+  --theme-secondary-bg: #0ea5e9;
+  --theme-secondary-hover-bg: #0284c7;
+  --theme-secondary-focus-ring: #38bdf8;
+  --theme-secondary-text: #ffffff;
+
+  --theme-checkbox-color: var(--theme-primary-bg);
+  --theme-range-color: var(--theme-primary-bg);
+  --theme-scrollbar-thumb-bg: #94a3b8;
+  --theme-scrollbar-track-bg: #f1f5f9;
+
+  --theme-table-cell-bg: #ffffff;
+  --theme-table-cell-text: #1e293b;
+  --theme-table-header-bg: #f1f5f9;
+  --theme-table-header-text: #475569;
+  --theme-table-border: #e2e8f0;
+
+  --theme-app-bg: #f8fafc;
+  --theme-app-text: #1e293b;
+  --theme-app-border: #e2e8f0;
+  --theme-app-subtle-bg: #f1f5f9;
+
+  --theme-card-bg: #ffffff;
+  --theme-card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --theme-card-border: #e2e8f0;
+  --theme-card-text: var(--theme-app-text);
+  --theme-main-title-text: #374151;
+  --theme-card-heading-text: var(--theme-main-title-text);
+  --theme-section-subheading-text: #475569;
+
+  --theme-input-bg: #ffffff;
+  --theme-input-text: #111827;
+  --theme-input-border: #d1d5db;
+  --theme-input-focus-ring: var(--theme-primary-focus-ring);
+  --theme-input-placeholder: #6b7280;
+  --theme-input-hover-bg: #f9fafb;
+
+  --base-text-size: 12px;
+}
+
+.dark {
+  --theme-primary-bg: #0ea5e9;
+  --theme-primary-hover-bg: #0284c7;
+  --theme-primary-focus-ring: #38bdf8;
+  --theme-primary-text: #ffffff;
+
+  --theme-secondary-bg: #475569;
+  --theme-secondary-hover-bg: #334155;
+  --theme-secondary-focus-ring: #94a3b8;
+  --theme-secondary-text: #f1f5f9;
+
+  --theme-checkbox-color: var(--theme-primary-bg);
+  --theme-range-color: var(--theme-primary-bg);
+  --theme-scrollbar-thumb-bg: #4b5563;
+  --theme-scrollbar-track-bg: #1f2937;
+
+  --theme-table-cell-bg: #374151;
+  --theme-table-cell-text: #f3f4f6;
+  --theme-table-header-bg: #1f2937;
+  --theme-table-header-text: #d1d5db;
+  --theme-table-border: #4b5563;
+
+  --theme-app-bg: #111827;
+  --theme-app-text: #d1d5db;
+  --theme-app-border: #374151;
+  --theme-app-subtle-bg: #1f2937;
+
+  --theme-card-bg: #1f2937;
+  --theme-card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3),
+    0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --theme-card-border: #374151;
+  --theme-card-text: var(--theme-app-text);
+  --theme-main-title-text: #e5e7eb;
+  --theme-card-heading-text: var(--theme-main-title-text);
+  --theme-section-subheading-text: #9ca3af;
+
+  --theme-input-bg: #374151;
+  --theme-input-text: #f3f4f6;
+  --theme-input-border: #4b5563;
+  --theme-input-focus-ring: var(--theme-primary-focus-ring);
+  --theme-input-placeholder: #9ca3af;
+  --theme-input-hover-bg: #4b5563;
+}
+
+body {
+  @apply font-sans antialiased bg-[var(--theme-app-bg)] text-[var(--theme-app-text)] transition-colors duration-300;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-scrollbar-track-bg);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-scrollbar-thumb-bg);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+}
+
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center px-3 py-1.5 rounded-md transition-colors duration-150 border text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-1 ring-[var(--theme-primary-focus-ring)];
+  }
+  .btn-primary {
+    @apply btn-base bg-[var(--theme-primary-bg)] text-[var(--theme-primary-text)] hover:bg-[var(--theme-primary-hover-bg)] border-transparent;
+  }
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  .btn-upload {
+    @apply btn-base bg-[var(--theme-primary-bg)] text-[var(--theme-primary-text)] hover:bg-[var(--theme-primary-hover-bg)] border-transparent;
+  }
+
+  .dataset-button {
+    @apply btn-base;
+    background-color: var(--theme-input-bg);
+    border-color: var(--theme-input-border);
+    color: var(--theme-app-text);
+  }
+  .dataset-button:hover {
+    background-color: var(--theme-input-hover-bg);
+    border-color: var(--theme-primary-focus-ring);
+  }
+  .dataset-button.selected {
+    @apply bg-[var(--theme-primary-bg)] border-[var(--theme-primary-bg)] text-[var(--theme-primary-text)] font-semibold ring-1 ring-[var(--theme-primary-bg)] focus:outline-none;
+  }
+  .dataset-button.selected:hover {
+    @apply bg-[var(--theme-primary-hover-bg)];
+  }
+  .dataset-button .remove-icon {
+    @apply ml-1.5 p-0.5 -mr-1 focus:outline-none transition-colors duration-150;
+    color: var(--theme-input-placeholder);
+  }
+  .dataset-button.selected .remove-icon {
+    color: var(--theme-primary-text);
+    @apply opacity-70 hover:opacity-100;
+  }
+  .dataset-button:not(.selected) .remove-icon:hover {
+    @apply text-red-600 dark:text-red-500 cursor-pointer;
+  }
+
+  .custom-checkbox {
+    color: var(--theme-checkbox-color);
+    @apply h-4 w-4 rounded border-[var(--theme-input-border)] focus:outline-none focus:ring-2 focus:ring-offset-1 ring-[var(--theme-primary-focus-ring)] bg-[var(--theme-input-bg)];
+  }
+
+  input[type="range"].themed-range {
+    accent-color: var(--theme-range-color);
+    @apply w-full h-2 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-1 ring-[var(--theme-primary-focus-ring)];
+    background-color: var(--theme-app-border);
+  }
+  .themed-range::-webkit-slider-thumb {
+    background-color: var(--theme-range-color);
+  }
+  .themed-range::-moz-range-thumb {
+    background-color: var(--theme-range-color);
+  }
+
+  .custom-radio-label {
+    @apply focus-within:outline-none;
+  }
+  .custom-radio-button {
+    @apply px-2 py-1 border rounded-md text-center w-full text-xs whitespace-nowrap transition-colors duration-150;
+    &.selected {
+      @apply border-[var(--theme-primary-bg)] bg-[var(--theme-primary-bg)] text-[var(--theme-primary-text)] font-medium;
+    }
+    &:not(.selected) {
+      background-color: var(--theme-input-bg);
+      border-color: var(--theme-input-border);
+      color: var(--theme-app-text);
+      @apply hover:bg-[var(--theme-input-hover-bg)];
+    }
+    .custom-radio-label:focus-within & {
+      @apply ring-2 ring-offset-1 ring-[var(--theme-primary-focus-ring)];
+    }
+  }
+
+  .schedule-table {
+    font-size: var(--base-text-size);
+    @apply min-w-full w-full table-fixed border-collapse border text-center;
+    border-color: var(--theme-table-border);
+  }
+  .schedule-table thead {
+    background-color: var(--theme-table-header-bg);
+  }
+  .schedule-table th {
+    font-size: inherit;
+    color: var(--theme-table-header-text);
+    border-color: var(--theme-table-border);
+    @apply px-2 py-2 font-semibold align-middle truncate;
+  }
+  .schedule-table td {
+    font-size: inherit;
+    background-color: var(--theme-table-cell-bg);
+    color: var(--theme-table-cell-text);
+    border-color: var(--theme-table-border);
+    @apply px-1 py-1 sm:px-2 sm:py-2 align-middle relative;
+  }
+  .schedule-table td.time-cell {
+    background-color: var(--theme-table-header-bg);
+    color: var(--theme-table-header-text);
+    @apply font-medium;
+  }
+
+  .schedule-entry {
+    font-size: inherit;
+    @apply block p-1 sm:p-2 rounded border shadow-sm text-center w-full overflow-hidden transition-colors duration-150;
+    background-color: var(--theme-app-subtle-bg);
+    border-color: var(--theme-table-border);
+    color: var(--theme-app-text);
+  }
+  .schedule-entry .entry-course {
+    font-size: inherit;
+    @apply font-semibold truncate;
+    color: var(--theme-app-text);
+  }
+  .schedule-entry .entry-detail {
+    font-size: inherit;
+    @apply truncate;
+    color: var(--theme-section-heading-text);
+  }
+
+  .schedule-tag {
+    @apply inline-block bg-[var(--theme-primary-bg)] text-[var(--theme-primary-text)] px-2 py-0.5 rounded text-xs sm:text-sm mr-1 mb-1;
+  }
+
+  .card-container {
+    @apply p-4 sm:p-6 rounded-lg shadow-md mb-6;
+    background-color: var(--theme-card-bg);
+    box-shadow: var(--theme-card-shadow);
+    border: 1px solid var(--theme-card-border);
+  }
+
+  .main-section-title {
+    @apply text-lg font-semibold mb-3;
+    color: var(--theme-main-title-text);
+  }
+  .card-container h3.main-section-title {
+    color: var(--theme-main-title-text);
+  }
+
+  .data-management-card {
+    @apply card-container;
+  }
+  .share-loader {
+    @apply card-container;
+  }
+  .share-loader input {
+    background-color: var(--theme-input-bg);
+    color: var(--theme-input-text);
+    border-color: var(--theme-input-border);
+  }
+  .share-loader input::placeholder {
+    color: var(--theme-input-placeholder);
+  }
+  .share-loader button svg {
+    color: var(--theme-app-text);
+  }
+  .share-loader button:hover svg {
+    color: var(--theme-primary-bg);
+  }
+  .share-loader p.text-red-600 {
+    @apply dark:text-red-400;
+  }
+  .share-loader p.text-blue-600 {
+    @apply dark:text-blue-400;
+  }
+  .dark .share-loader h3 {
+    color: var(--theme-main-title-text);
+  }
+
+  .schedule-display-section {
+    @apply card-container mt-6;
+  }
+  .schedule-display-section > div:first-child {
+    @apply border-b pb-2 mb-4;
+    border-bottom-color: var(--theme-app-border);
+  }
+
+  .schedule-display-section p.text-gray-500 {
+    color: var(--theme-app-text);
+    @apply dark:text-slate-400;
+  }
+  .schedule-display-section .placeholder-content-area {
+    @apply p-10;
+    background-color: var(--theme-card-bg);
+  }
+
+  .schedule-card {
+    @apply relative mb-6 border rounded-lg shadow-md overflow-hidden transition-colors duration-150;
+    background-color: var(--theme-app-subtle-bg);
+    border-color: var(--theme-app-border);
+    box-shadow: var(--theme-card-shadow);
+  }
+  .schedule-card > div:first-child {
+    @apply p-3 border-b;
+    border-bottom-color: var(--theme-app-border);
+    color: var(--theme-app-text);
+  }
+  .schedule-card > div:first-child:hover {
+    background-color: var(--theme-app-border);
+    @apply dark:bg-slate-700;
+  }
+  .schedule-card > div:first-child button svg {
+    color: var(--theme-app-text);
+  }
+  .schedule-card > div:first-child button:hover svg {
+    color: var(--theme-primary-bg);
+  }
+  .schedule-card .schedule-table-wrapper {
+    border-top-color: var(--theme-app-border);
+  }
+
+  .settings-panel-header {
+    @apply p-4 flex justify-between items-center border-b sticky top-0 z-10 h-16 flex-shrink-0;
+    background-color: var(--theme-card-bg);
+    border-bottom-color: var(--theme-app-border);
+  }
+
+  .settings-panel-header h2 {
+    @apply text-lg font-semibold;
+    color: var(--theme-main-title-text);
+  }
+  .settings-panel-content {
+    @apply flex-grow p-4 space-y-4 overflow-y-auto pb-4;
+    background-color: var(--theme-card-bg);
+  }
+
+  .settings-subheading {
+    @apply text-base font-semibold mb-2;
+    color: var(--theme-section-subheading-text);
+  }
+  .settings-panel-content section#filters span.text-gray-500 {
+    color: var(--theme-input-placeholder);
+  }
+  .settings-panel-content section#appearance-section {
+    @apply mt-4 pt-4 border-t;
+    border-top-color: var(--theme-app-border);
+  }
+
+  .appearance-option-block,
+  .filter-block {
+    @apply relative text-left border rounded-md shadow-sm;
+    background-color: var(--theme-card-bg);
+    border-color: var(--theme-app-border);
+    color: var(--theme-app-text);
+  }
+  .appearance-option-block > div:first-child,
+  .filter-block > div:first-child {
+    @apply hover:bg-[var(--theme-app-subtle-bg)];
+  }
+  .appearance-option-block > div:first-child span:first-child,
+  .filter-block > div:first-child span:nth-child(2) {
+    color: var(--theme-card-heading-text);
+  }
+  .appearance-option-block > div:first-child span svg,
+  .filter-block > div:first-child span svg {
+    color: var(--theme-app-text);
+  }
+
+  .appearance-option-content,
+  .filter-checkbox-content {
+    background-color: var(--theme-input-bg);
+    border-top-color: var(--theme-app-border);
+    color: var(--theme-input-text);
+    @apply p-3 space-y-1.5 pr-1;
+  }
+
+  .dark .filter-checkbox-content,
+  .dark .appearance-option-content {
+    background-color: var(--theme-card-bg);
+  }
+
+  .appearance-option-content label span,
+  .filter-checkbox-content label {
+    color: var(--theme-input-text);
+  }
+
+  .dark .filter-checkbox-content label,
+  .dark .appearance-option-content label {
+    color: var(--theme-app-text);
+  }
+  
+  .appearance-option-content label:hover,
+  .filter-checkbox-content label:hover {
+    background-color: var(--theme-input-hover-bg);
+  }
+
+  .dark .filter-checkbox-content label:hover,
+  .dark .appearance-option-content label:hover {
+    background-color: var(--theme-app-subtle-bg);
+  }
+
+  .filter-checkbox-content span.text-xs {
+    color: var(--theme-input-placeholder);
+  }
+
+  header.app-header {
+    @apply fixed top-0 left-0 right-0 z-40 h-16 flex justify-between items-center p-4 print-hide shadow-md;
+    background-color: var(--theme-card-bg);
+    border-bottom: 1px solid var(--theme-app-border);
+  }
+  header.app-header h1 {
+    color: var(--theme-card-heading-text);
+  }
+  header.app-header span.text-xs {
+    color: var(--theme-app-text);
+  }
+  header.app-header button.lg\\:hidden svg {
+    color: var(--theme-app-text);
+  }
+  header.app-header button.lg\\:hidden:hover svg {
+    color: var(--theme-primary-bg);
+  }
+
+  aside.app-sidebar {
+    @apply fixed inset-y-0 left-0 z-30 w-72 shadow-xl transform transition-transform duration-300 ease-in-out print-hide pt-16 flex flex-col;
+    background-color: var(--theme-card-bg);
+    border-right: 1px solid var(--theme-app-border);
+    color: var(--theme-app-text);
+  }
+  aside.app-sidebar .settings-panel-header {
+    background-color: var(--theme-card-bg);
+    border-bottom-color: var(--theme-app-border);
+  }
+  aside.app-sidebar .settings-panel-header h2 {
+    color: var(--theme-card-heading-text);
+  }
+  aside.app-sidebar .settings-panel-content {
+    background-color: var(--theme-card-bg);
+  }
+
+  main.app-main-content {
+    @apply flex-1 overflow-y-auto transition-all duration-300 ease-in-out lg:ml-72;
+    background-color: var(--theme-app-bg);
+  }
+}
+
+.print-hide {
+}

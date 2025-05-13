@@ -1,0 +1,110 @@
+[
+  {
+    "course": "A",
+    "day": "Monday",
+    "lecturer": "Adam",
+    "location": "E07",
+    "section": "1",
+    "time": "0800",
+    "type": "Lecture"
+  },
+  {
+    "course": "A",
+    "day": "Monday",
+    "lecturer": "Adam",
+    "location": "V01",
+    "section": "1",
+    "time": "1000",
+    "type": "Lecture"
+  },
+  {
+    "course": "A",
+    "day": "Wednesday",
+    "lecturer": "Adam",
+    "location": "L50",
+    "section": "1",
+    "time": "1300",
+    "type": "Lecture"
+  },
+  {
+    "course": "A",
+    "day": "Tuesday",
+    "lecturer": "Raiyan",
+    "location": "C25",
+    "section": "2",
+    "time": "0900",
+    "type": "Tutorial"
+  },
+  {
+    "course": "A",
+    "day": "Tuesday",
+    "lecturer": "Raiyan",
+    "location": "E07",
+    "section": "2",
+    "time": "1100",
+    "type": "Tutorial"
+  },
+  {
+    "course": "A",
+    "day": "Thursday",
+    "lecturer": "Raiyan",
+    "location": "V01",
+    "section": "2",
+    "time": "1400",
+    "type": "Tutorial"
+  },
+  {
+    "course": "B",
+    "day": "Monday",
+    "lecturer": "Meno",
+    "location": "C24",
+    "section": "1",
+    "time": "1000",
+    "type": "Lecture"
+  },
+  {
+    "course": "B",
+    "day": "Monday",
+    "lecturer": "Meno",
+    "location": "N24",
+    "section": "1",
+    "time": "1200",
+    "type": "Lecture"
+  },
+  {
+    "course": "B",
+    "day": "Wednesday",
+    "lecturer": "Meno",
+    "location": "C25",
+    "section": "1",
+    "time": "1500",
+    "type": "Lecture"
+  },
+  {
+    "course": "B",
+    "day": "Tuesday",
+    "lecturer": "Addryan",
+    "location": "E07",
+    "section": "2",
+    "time": "1000",
+    "type": "Tutorial"
+  },
+  {
+    "course": "B",
+    "day": "Tuesday",
+    "lecturer": "Addryan",
+    "location": "C23",
+    "section": "2",
+    "time": "1200",
+    "type": "Tutorial"
+  },
+  {
+    "course": "B",
+    "day": "Thursday",
+    "lecturer": "Addryan",
+    "location": "L50",
+    "section": "2",
+    "time": "1300",
+    "type": "Tutorial"
+  }
+]

@@ -1,0 +1,13 @@
+﻿Course,Section,Day,Time,Location,Lecturer,Type
+A,1,Monday,800,E07,Adam,Lecture
+A,1,Monday,1000,V01,Adam,Lecture
+A,1,Wednesday,1300,L50,Adam,Lecture
+A,2,Tuesday,900,C25,Raiyan,Tutorial
+A,2,Tuesday,1100,E07,Raiyan,Tutorial
+A,2,Thursday,1400,V01,Raiyan,Tutorial
+B,1,Monday,1000,C24,Meno,Lecture
+B,1,Monday,1200,N24,Meno,Lecture
+B,1,Wednesday,1500,C25,Meno,Lecture
+B,2,Tuesday,1000,E07,Addryan,Tutorial
+B,2,Tuesday,1200,C23,Addryan,Tutorial
+B,2,Thursday,1300,L50,Addryan,Tutorial
